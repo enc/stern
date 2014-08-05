@@ -1,0 +1,26 @@
+.blogtitle
+  = image_tag "Puste.png"
+  %h1 Lorem ipsum sunt est magis
+  %h2 sit  amet, consetetur sadipscing elitr, sed
+
+- @posts.each do |post|
+  .postbox
+    .textbox
+      .datebox
+        %p.day
+          = post.created_at.mday
+          = '.'
+        %p.month
+          = post.created_at.strftime "%b %y"
+      %h2
+        = link_to post_path post do
+          = post.title
+      %p
+        = post.content.truncate 150, serperator: /\s/
+        =link_to post_path post do
+          =image_tag "Stern.png"
+
+
+
+-if user_signed_in?
+  = link_to 'New Post', new_post_path

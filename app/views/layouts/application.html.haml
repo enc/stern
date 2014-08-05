@@ -1,0 +1,33 @@
+!!!
+%html
+  %head
+    %title= yield :title
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+    = yield :meta
+  %body
+    .content
+      %nav
+        %ul
+          %li
+            .navbox
+              = link_to root_path do
+                %p Home
+          %li
+            .navbox
+              = link_to about_path do
+                %p About Me
+          %li
+            .navbox
+              = link_to "#" do
+                %p Archive
+          %li
+            .navbox
+              = link_to imprint_path do
+                %p Imprint
+      -if alert
+        %p= alert
+      -if notice
+        %p= notice
+      = yield
