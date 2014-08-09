@@ -7,6 +7,23 @@
     = csrf_meta_tags
     = yield :meta
   %body
+    .social_box
+      .net_box
+        .icon
+          .img_b
+            = image_tag "email.png"
+      .net_box
+        .icon
+          .img_b
+            = image_tag "facebook.png"
+      .net_box
+        .icon
+          .img_b
+            = image_tag "xing.png"
+      .net_box
+        .icon
+          .img_b
+            = image_tag "instagram.png"
     .content
       %nav
         %ul
@@ -17,15 +34,15 @@
           %li
             .navbox
               = link_to about_path do
-                %p About Me
+                %p Über mich
           %li
             .navbox
               = link_to "#" do
-                %p Archive
+                %p Links
           %li
             .navbox
               = link_to imprint_path do
-                %p Imprint
+                %p Kontakt
       -if alert
         %p= alert
       -if notice
